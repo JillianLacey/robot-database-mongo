@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>User Directory</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+    <div class="container">{{#users}}
+        <ul>
+            <li class="image"><img src="{{avatar}}"></img>
+            </li>
+            <li class="name">{{name}}</li>
+            <li class="city">{{address.city}}</li>
+            <li class="country">{{address.country}}</li>
+            <li class="job">{{job}}</li>
+            <li class="company">{{company}}</li>
+            <li class="email">{{email}}</li>
+            <li class="phone">{{phone}}</li>
+            <li class="university">{{university}}</li>
+            <li class="skills">{{skills}}</li>
+        </ul>
+        {{/users}}
+    </div>
+
+    <script type="text/javascript" src="../app/data.js"></script>
+    <script type="text/javascript" src="../app/server.js"></script>
+
+</body>
+
+</html>
