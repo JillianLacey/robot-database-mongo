@@ -10,26 +10,26 @@
 </head>
 
 <body>
-    <div class="container">{{#users}}
-        <ul>
-            <li class="image"><img src="{{avatar}}"></img>
-            </li>
-            <li class="name">{{name}}</li>
-            <li class="city">{{address.city}}</li>
-            <li class="country">{{address.country}}</li>
-            <li class="job">{{job}}</li>
-            <li class="company">{{company}}</li>
-            <li class="email">{{email}}</li>
-            <li class="phone">{{phone}}</li>
-            <li class="university">{{university}}</li>
-            <li class="skills">{{skills}}</li>
-        </ul>
-        {{/users}}
+
+
+    <h1>User Directory</h1>
+
+    <div class="containerParent">
+        <div class="container">
+            {{#users}}
+            <div class="info">
+                <p><img src="{{avatar}}"></p>
+                <a href="/{{id}}">{{name}}</a> {{#job}}
+                <p class="jobInfo">{{job}}, {{company}}</p>{{/job}} {{^job}}
+                <p style="color: #c87a74">Available for hire</p>{{/job}}
+            </div>
+            {{/users}}
+        </div>
     </div>
+
 
     <script type="text/javascript" src="../app/data.js"></script>
     <script type="text/javascript" src="../app/server.js"></script>
-
 </body>
 
 </html>
