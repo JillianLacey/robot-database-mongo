@@ -10,29 +10,35 @@
 </head>
 
 <body>
-        <nav>
-            <a class="home" href="/">Home</a>
-        </nav>
+<div class="wrapper">
+    <div class="profile-container">
         <div>
             <img class="avatar" src="{{avatar}}">
-            <h1 class="profile-name">{{name}}</h1> 
-            <p>{{address.city}},{{address.country}}|{{#job}}    
-        <p>{{job}}, {{company}}</p>{{/job}} {{^job}}
-        <p style="color: #c87a74">Available for hire</p>{{/job}}|
-        {{email}}{{phone}}
+        </div>
+        <div class="text-content">
+            <p class="profile-name">{{name}}</p>
+
+            {{#address.city}}
+            <p>{{address.city}}, {{address.country}} | 
+                {{#job}} {{job}}, {{company}}
+                </p>{{/job}} {{^job}}
+                <span style="color: #c87a74">Available for hire</span>
+                {{/job}} 
+            {{/address.city}} 
+            {{^address.city}} {{address.country}} | {{#job}} {{job}}, {{company}}</p>{{/job}} {{^job}}<span style="color: #c87a74">Available for hire</span>{{/job}} 
+            {{/address.city}}
+            <p> {{email}} | {{phone}}</p>
+
+            {{#university}}
+            <p><strong>Education:</strong> {{university}}</p>
+            {{/university}}{{^university}} {{/university}}
+            <p><strong>Skills:</strong> {{skills}}</p>
+            <p><a class="home" href="/">Return To Directory</a></p>
         </div>
        
-        <div>   {{university}}{{skills}}</div>
-
-
-            
-        
-
-
-
-
-    <script type="text/javascript" src="../app/data.js"></script>
-    <script type="text/javascript" src="../app/server.js"></script>
+ </div>
+       
+</div>
 </body>
 
 </html>
