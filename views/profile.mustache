@@ -5,12 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{{name}}'s Profile</title>
+    <title>{{user.name}}'s Profile</title>
     <link rel="stylesheet" href="/styles.css">
 </head>
 
 <body>
+   
+  
 <div class="wrapper">
+    {{#user}} 
     <div class="profile-container">
         <div>
             <img class="avatar" src="{{avatar}}">
@@ -32,13 +35,15 @@
             {{#university}}
             <p><strong>Education:</strong> {{university}}</p>
             {{/university}}{{^university}} {{/university}}
-            <p><strong>Skills:</strong> {{skills}}</p>
-            <p><a class="home" href="/">Return To Directory</a></p>
+            <p><strong>Skills:</strong> {{skills}}</p> 
+            <a href="/">Return To Directory</a>
         </div>
-       
+        {{/user}}
  </div>
        
 </div>
+        
+
 </body>
 
 </html>

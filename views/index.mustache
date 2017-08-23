@@ -10,15 +10,19 @@
 </head>
 
 <body>
-
     <h1>User Directory</h1>
-
+  
+    <nav class="main-nav">
+        <a href="/employed">Currently Employed</a>
+        <a href="/unemployed">Looking For Work</a>
+    </nav>
+<br>
     <div class="containerParent">
         <div class="container">
             {{#users}}
             <div class="info">
                 <p><img src="{{avatar}}"></p>
-                <p><a href="/{{id}}">{{name}}</a></p> 
+                <p><a href="/profile/{{_id}}">{{name}}</a></p> 
                 {{#job}} <p class="jobInfo">{{job}}, {{company}}</p>{{/job}} {{^job}}
                 <p style="color: #c87a74">Available for hire</p>{{/job}}
             </div>
